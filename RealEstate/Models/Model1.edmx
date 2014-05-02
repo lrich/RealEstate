@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RealEstateModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+      <Schema Namespace="RealEstateModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="RealEstateModelStoreContainer">
           <EntitySet Name="Listing" EntityType="RealEstateModel.Store.Listing" store:Type="Tables" store:Schema="dbo" store:Name="Listing">
             <DefiningQuery>SELECT 
@@ -30,8 +30,8 @@
           <Property Name="ListingID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Bedrooms" Type="int" />
           <Property Name="Rooms" Type="int" />
-          <Property Name="Street1" Type="varchar" MaxLength="200" />
-          <Property Name="Street2" Type="varchar" MaxLength="200" />
+          <Property Name="Street1" Type="varchar" MaxLength="100" />
+          <Property Name="Street2" Type="varchar" MaxLength="100" />
           <Property Name="City" Type="varchar" MaxLength="100" />
           <Property Name="State" Type="varchar" MaxLength="100" />
           <Property Name="Zip" Type="varchar" MaxLength="100" />
@@ -52,8 +52,8 @@
           <Property Name="ListingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Bedrooms" Type="Int32" />
           <Property Name="Rooms" Type="Int32" />
-          <Property Name="Street1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-          <Property Name="Street2" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Street1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Street2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="State" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Zip" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
@@ -65,21 +65,17 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RealEstateModelStoreContainer" CdmEntityContainer="RealEstateEntities">
-          <EntitySetMapping Name="Listings">
-            <EntityTypeMapping TypeName="RealEstateModel.Listing">
-              <MappingFragment StoreEntitySet="Listing">
-                <ScalarProperty Name="ListingID" ColumnName="ListingID" />
-                <ScalarProperty Name="Bedrooms" ColumnName="Bedrooms" />
-                <ScalarProperty Name="Rooms" ColumnName="Rooms" />
-                <ScalarProperty Name="Street1" ColumnName="Street1" />
-                <ScalarProperty Name="Street2" ColumnName="Street2" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Zip" ColumnName="Zip" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+          <EntitySetMapping Name="Listings"><EntityTypeMapping TypeName="RealEstateModel.Listing"><MappingFragment StoreEntitySet="Listing">
+            <ScalarProperty Name="ListingID" ColumnName="ListingID" />
+            <ScalarProperty Name="Bedrooms" ColumnName="Bedrooms" />
+            <ScalarProperty Name="Rooms" ColumnName="Rooms" />
+            <ScalarProperty Name="Street1" ColumnName="Street1" />
+            <ScalarProperty Name="Street2" ColumnName="Street2" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="Zip" ColumnName="Zip" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -96,10 +92,13 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams></Diagrams>
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="RealEstateModel.Listing" Width="1.5" PointX="0.75" PointY="0.75" Height="2.41404296875" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
   </Designer>
 </edmx:Edmx>
