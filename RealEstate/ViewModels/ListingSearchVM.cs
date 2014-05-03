@@ -7,11 +7,13 @@ namespace RealEstateRentals.ViewModels
 {
     public class ListingSearchVM
     {
+        
         public string City { get; set; }
         public int NumberOfBedrooms { get; set; }
         public int Price { get; set; }
 
-        List<ListingSearchListingsVM> lListings {get; set;} 
+        public List<ListingSearchListingsVM> lListings {get; set;} 
+ 
     }
 
     public class ListingSearchListingsVM

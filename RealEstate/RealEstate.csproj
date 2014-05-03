@@ -163,17 +163,20 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BusinessLogic\HomeBL.cs" />
+    <Compile Include="BusinessLogic\ListingDetailsBL.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListingDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Model1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ListingInformationVM.cs" />
     <Compile Include="ViewModels\ListingSearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +320,12 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\ListingDetail\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\SearchResults.cshtml" />
+    <Content Include="Views\ListingDetail\Add.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

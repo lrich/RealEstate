@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Search Listings";
+    ViewBag.Title = "Add";
 }
 
-@using (Html.BeginForm("SearchResults", "Home", FormMethod.Post))
-{  
-<div data-role="fieldcontainer">
-      <label for="City">City</label>
+@using (Html.BeginForm("Add", "ListingDetail", FormMethod.Post))
+{ 
+
+ <label for="City">City</label>
     <select id="City" name="City">
         <option value="Allston">Allston</option>
         <option value="Brighton">Brighton</option>
@@ -35,8 +35,22 @@
 
     <label for="Price">Price</label>
     <input type="range" id="Price" name="Price" min="900" max="3000" value="900" />
-                                                                      
-</div>
+
+    <label for="Street1">Street 1</label>
+<input type="text" id="Street1" name="Street1" />
+<label for="Street2">Street 2</label>
+<input type="text" id="Street2" name="Street2" />
+
+<label for="State">State</label>
+<input type="text" id="State" name="State" />
+<label for="Street1">Zip</label>
+<input type="text" id="Zip" name="Zip" />
+
 <br /><br />
- <button type="submit" id="btnSearch" name="btnSearch" data-theme="b">Search Listings</button>
+ <button type="submit" id="btnAdd" name="btnAdd" data-theme="b">Add New Listing</button>
+    
 }
+
+
+
+
